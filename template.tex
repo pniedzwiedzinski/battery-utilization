@@ -4,7 +4,7 @@
 	%aspectratio=169, % Uncomment to set the aspect ratio to a 16:9 ratio which matches the aspect ratio of 1080p and 4K screens and projectors
 ]{beamer}
 
-\graphicspath{{Images/}{./}} % Specifies where to look for included images (trailing slash required)
+\graphicspath{{images/}{./}} % Specifies where to look for included images (trailing slash required)
 
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule for better rules in tables
 \usetheme{Madrid}
@@ -31,6 +31,8 @@
 %\usepackage[default]{opensans} % Use the Open Sans font for sans serif text
 %\usepackage[default]{FiraSans} % Use the Fira Sans font for sans serif text
 %\usepackage[default]{lato} % Use the Lato font for sans serif text
+\usepackage{chemformula}
+\usepackage[T1]{fontenc}
 
 %----------------------------------------------------------------------------------------
 %	PRESENTATION INFORMATION
@@ -65,7 +67,7 @@
 % The table of contents outputs the sections and subsections that appear in your presentation, specified with the standard \section and \subsection commands. You may either display all sections and subsections on one slide with \tableofcontents, or display each section at a time on subsequent slides with \tableofcontents[pausesections]. The latter is useful if you want to step through each section and mention what you will discuss.
 
 \begin{frame}
-	\frametitle{Presentation Overview} % Slide title, remove this command for no title
+	\frametitle{Spis treści} % Slide title, remove this command for no title
 	
 	\tableofcontents % Output the table of contents (all sections on one slide)
 	%\tableofcontents[pausesections] % Output the table of contents (break sections up across separate slides)
@@ -75,277 +77,187 @@
 %	PRESENTATION BODY SLIDES
 %----------------------------------------------------------------------------------------
 
-\section{Text Examples} % Sections are added in order to organize your presentation into discrete blocks, all sections and subsections are automatically output to the table of contents as an overview of the talk but NOT output in the presentation as separate slides
+\section{Budowa ogniw}
 
+\subsection{Rodzaje ogniw}
 %------------------------------------------------
 
-\subsection{Paragraphs and Lists}
-
 \begin{frame}
-	\frametitle{Paragraphs of Text}
-	
-	Sed iaculis \alert{dapibus gravida}. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.
-	
-	\bigskip % Vertical whitespace
-	
-	% Quote example
-	\begin{quote}
-		Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio.\\
-		--- Someone, somewhere\ldots
-	\end{quote}
-	
-	\bigskip % Vertical whitespace
-	
-	Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis.
+	\centering
+  \includegraphics[width=8cm]{ogniwo.png}
 \end{frame}
 
-%------------------------------------------------
+\begin{frame}{Lampa ogrodowa z Lidla}{Ogniwo wodorkowe: Ni-MH}
+  \centering
+  \includegraphics[width=8cm]{solar-lamp.jpg}
+	
+	%\ch{Ni} - katoda, \ch{M (LaNi5)} - anoda, stop metali chłonący wodór, \ch{H(H2O + KOH)}\cite{c05}.
+
+\end{frame}
+
+\begin{frame}{Słuchawki Bluetooth}{Bateria litowa: Li-ion}
+  \centering
+  \includegraphics[width=8cm]{earbuds.jpg}
+	
+\end{frame}
+
+\begin{frame}{Bank energii}{Akumulator kwasowo-ołowiowy: Pb}
+  \centering
+  \includegraphics[width=8cm]{lead-acid.jpg}
+
+	%\ch{Pb} - katoda, \ch{PbO2} - anoda, \ch{H2SO4} - elektrolit (kwas siarkowy)
+\end{frame}
+
+\begin{frame}{Wiertarka}{Akumulator niklowo-kadmowy: Ni-Cd}
+  \centering
+  \includegraphics[width=8cm]{drill.jpg}
+
+	%\ch{Cd} - anoda, \ch{NiOOH} - katoda, \ch{KOH} - elektrolit
+\end{frame}
+
+\begin{frame}{Nokia 8810}{Li-ion}
+
+  \centering
+  \includegraphics[width=8cm]{phone.jpg}
+
+	\ch{Li}* - elektrolit, \ch{LiMnO4} - katoda, Grafit - anoda\cite{c05}\cite{m14}.
+\end{frame}
+
+\begin{frame}{18650}{Li-ion}
+
+  \centering
+  \includegraphics[width=8cm]{18650.jpg}
+\end{frame}
+
+\section{Degradacja akumulatora}
+
+\subsection{Działanie akumulatora Li-ion}
 
 \begin{frame}
-	\frametitle{Lists}
-	\framesubtitle{Bullet Points and Numbered Lists} % Optional subtitle
-	
+	\frametitle{Działanie akumulatora Li-ion}
+	\centering
+	\includegraphics[width=9cm]{liion.png}\cite{m14}
+\end{frame}
+
+\subsection{Degradacja}
+
+\begin{frame}
+  \centering
+	\includegraphics[width=12cm]{degradation-all.jpg}\cite{b17}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Degradacja}
+	\centering
 	\begin{itemize}
-		\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
-		\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus
-		\begin{itemize}
-			\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
-			\item Nam cursus est eget velit posuere pellentesque
-		\end{itemize}
-		\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
-	\end{itemize}
-	
-	\bigskip % Vertical whitespace
-	
+		\item Utrata dostępnych jonów litu
+		\item Utrata materiału na anodzie
+		\item Utrata materiału na katodzie
+	\end{itemize} \cite{b17}
+
+	\vspace{4em}
+	Trudno jest określić "stan zdrowia" baterii \cite{s21}
+
+\end{frame}
+
+\section{Koniec życia akumulatora}
+
+\begin{frame}
+	\frametitle{Sprzedaż akumulatorów na świecie}
+	\centering
+	\includegraphics[width=10cm]{sales.png}\cite{p17}
+	$$ 80\ 000 MWh \div 140 \frac{Wh}{kg} \approx 570\ 000 t$$\cite{m14}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Wcale nie na śmietnik}
+	\centering
+	\includegraphics[width=8cm]{bmw.jpg}
+
+	Stacjonarny magazyn energii z używanych baterii elektryków BMW\cite{c17}
+\end{frame}
+
+	\begin{frame}
+	\centering
+	\includegraphics[width=10cm]{big-powerbank.png}
+	https://www.youtube.com/watch?v=-oilA8nLfsk
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Utylizacja zużytych akumulatorów}
+
 	\begin{enumerate}
-		\item Nam cursus est eget velit posuere pellentesque
-		\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida 
+		\item Zmielenie akumulatora (w całości lub w częściach)
+		\item Proces oddzielenia materiałów
+		\begin{itemize}
+			\item pirometalurgia
+			\item hydrometalurgia
+			\item bio-hydrometalurgia
+		\end{itemize}
 	\end{enumerate}
 \end{frame}
 
-%------------------------------------------------
-
-\subsection{Blocks}
+\begin{frame}
+	\centering
+	\includegraphics[width=9cm]{retriev.png}\cite{k20}
+\end{frame}
 
 \begin{frame}
-	\frametitle{Blocks of Highlighted Text}
-	
-	\begin{block}{Block Title}
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue.
-	\end{block}
-	
-	\begin{exampleblock}{Example Block Title}
-		Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan.
-	\end{exampleblock}
-	
-	\begin{alertblock}{Alert Block Title}
-		Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-	\end{alertblock}
-	
-	\begin{block}{} % Block without title
-		Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci.
-	\end{block}
-\end{frame}
+	\frametitle{Procesy technologiczne}
 
+	\begin{enumerate}
+		\item Retriev - węglan litu i \ch{CO3} (zanurzanie w ciekłym azocie)
+		\item Umicore - kobalt i nikiel
+		\item Accurec - chlorek litu i stop kobaltu z magnanem (materiał katodowy)
+		\item Recupryl - mielenie w atmosferze neutralnego gazu
+		\item Batrec-Sumitomo
+	\end{enumerate}
+
+\end{frame}
 %------------------------------------------------
 
-\subsection{Columns}
+\section{Podsumowanie}
 
 \begin{frame}
-	\frametitle{Multiple Columns}
-	\framesubtitle{Subtitle} % Optional subtitle
-	
-	\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-		\begin{column}{0.45\textwidth} % Left column width
-			\textbf{Heading}
-			\begin{enumerate}
-				\item Statement
-				\item Explanation
-				\item Example
-			\end{enumerate}
-		\end{column}
-		\begin{column}{0.5\textwidth} % Right column width
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-		\end{column}
-	\end{columns}
+	\frametitle{Podsumowanie}
+
 \end{frame}
-
-%------------------------------------------------
-
-\section{Table and Figure Examples}
-
-\subsection{Table}
-
-\begin{frame}
-	\frametitle{Table}
-	\framesubtitle{Subtitle} % Optional subtitle
-	
-	\begin{table}
-		\begin{tabular}{l l l}
-			\toprule
-			\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-			\midrule
-			Treatment 1 & 0.0003262 & 0.562 \\
-			Treatment 2 & 0.0015681 & 0.910 \\
-			Treatment 3 & 0.0009271 & 0.296 \\
-			\bottomrule
-		\end{tabular}
-		\caption{Table caption}
-	\end{table}
-\end{frame}
-
-%------------------------------------------------
-
-\subsection{Figure}
-
-\begin{frame}
-	\frametitle{Figure}
-	
-	\begin{figure}
-		%\includegraphics[width=0.8\linewidth]{creodocs_logo.pdf}
-		\caption{Creodocs logo.}
-	\end{figure}
-\end{frame}
-
-%------------------------------------------------
-
-\section{Mathematics}
-
-\begin{frame}
-	\frametitle{Definitions \& Examples}
-	
-	\begin{definition}
-		A \alert{prime number} is a number that has exactly two divisors.
-	\end{definition}
-	
-	\smallskip % Vertical whitespace
-	
-	\begin{example}
-		\begin{itemize}
-			\item 2 is prime (two divisors: 1 and 2).
-			\item 3 is prime (two divisors: 1 and 3).
-			\item 4 is not prime (\alert{three} divisors: 1, 2, and 4).
-		\end{itemize}
-	\end{example}
-	
-	\smallskip % Vertical whitespace
-	
-	You can also use the \texttt{theorem}, \texttt{lemma}, \texttt{proof} and \texttt{corollary} environments.
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-	\frametitle{Theorem, Corollary \& Proof}
-	
-	\begin{theorem}[Mass--energy equivalence]
-		$E = mc^2$
-	\end{theorem}
-	
-	\begin{corollary}
-		$x + y = y + x$
-	\end{corollary}
-	
-	\begin{proof}
-		$\omega + \phi = \epsilon$
-	\end{proof}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-	\frametitle{Equation}
-
-	\begin{equation}
-		\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
-	\end{equation}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-	\frametitle{Verbatim}
-	
-	\begin{example}[Theorem Slide Code]
-		\begin{verbatim}
-			\begin{frame}
-				\frametitle{Theorem}
-				\begin{theorem}[Mass--energy equivalence]
-					$E = mc^2$
-				\end{theorem}
-		\end{frame}\end{verbatim} % Must be on the same line
-	\end{example}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-	Slide without title.
-\end{frame}
-
-%------------------------------------------------
-
-\section{Referencing}
-
-\begin{frame}
-	\frametitle{Citing References}
-	
-	An example of the \texttt{\textbackslash cite} command to cite within the presentation:
-	
-	\bigskip % Vertical whitespace
-	
-	This statement requires citation \cite{p1,p2}.
-\end{frame}
-
-%------------------------------------------------
 
 \begin{frame} % Use [allowframebreaks] to allow automatic splitting across slides if the content is too long
-	\frametitle{References}
+	\frametitle{Bibliografia}
 	
 	\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below, you may need to use multiple columns and/or reduce the font size further if you have many references
-		\footnotesize % Reduce the font size in the bibliography
-		
-		\bibitem[Smith, 2022]{p1}
-			John Smith (2022)
-			\newblock Publication title
-			\newblock \emph{Journal Name} 12(3), 45 -- 678.
+	\tiny	
+	\bibitem{c05}
+			Andrzej Czerwiński, 2005
+			\newblock \emph{Akumulatory, baterie, ogniwa}
 			
-		\bibitem[Kennedy, 2023]{p2}
-			Annabelle Kennedy (2023)
-			\newblock Publication title
-			\newblock \emph{Journal Name} 12(3), 45 -- 678.
+	\bibitem{b17}
+			Christoph R. Birkl, 2017
+			\newblock \emph{Degradation diagnostics for lithium ion cells}
+	\bibitem{s19}
+			Ewelina Sendek-Matysiak, 2019
+			\newblock \emph{ Ocena baterii litowo-jonowych stosowanych w samochodach elektrycznych typu BEV pod względem bezpieczeństwa i wpływu na środowisko }
+	\bibitem{m14}
+			M. Bakierska, A. Chojnacka, 2014
+			\newblock \emph{Akumulatory litowe jako współczesne systemy magazynowania energii}
+	\bibitem{p17}
+			Ch. Pillot, 2017
+			\newblock \emph{The Rechargeable Battery Market and Main Trends 2016–2025.}
+	\bibitem{c17}
+			Chris Davies, 2017
+			\newblock \emph{BMW's battery graveyard gives EV cast-offs a second life}
+			https://www.slashgear.com/bmws-battery-graveyard-gives-ev-cast-offs-a-second-life-26505613/
+	\bibitem{c22}
+			Karolina Charzewska, 2022
+			\newblock \emph{ Recykling akumulatorów litowo-jonowych na potrzeby gospodarki o obiegu zamkniętym }
+	\bibitem{k20}
+			Kamińska Ewa, Pawlak Piotr, 2020
+			\newblock \emph{ Analiza ekobilansowa recyklingu zużytych litowo-jonowych akumulatorów samochodowych w technologii Retriev }
+		\bibitem{s21}
+			Su Chun, Chen Hongjing, Wen Zejun, 2021
+			\newblock \emph{Prediction of remaining useful life for lithium-ion battery with multiple health indicators}
 	\end{thebibliography}
-\end{frame}
-
-%----------------------------------------------------------------------------------------
-%	ACKNOWLEDGMENTS SLIDE
-%----------------------------------------------------------------------------------------
-
-\begin{frame}
-	\frametitle{Acknowledgements}
-	
-	\begin{columns}[t] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-		\begin{column}{0.45\textwidth} % Left column width
-			\textbf{Smith Lab}
-			\begin{itemize}
-				\item Alice Smith
-				\item Devon Brown
-			\end{itemize}
-			\textbf{Cook Lab}
-			\begin{itemize}
-				\item Margaret
-				\item Jennifer
-				\item Yuan
-			\end{itemize}
-		\end{column}		
-		\begin{column}{0.5\textwidth} % Right column width
-			\textbf{Funding}
-			\begin{itemize}
-				\item British Royal Navy
-				\item Norwegian Government
-			\end{itemize}
-		\end{column}
-	\end{columns}
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -354,11 +266,11 @@
 
 \begin{frame}[plain] % The optional argument 'plain' hides the headline and footline
 	\begin{center}
-		{\Huge The End}
+		{\Huge Dziękuję za uwagę :)}
 		
 		\bigskip\bigskip % Vertical whitespace
 		
-		{\LARGE Questions? Comments?}
+		{\LARGE Pytania?}
 	\end{center}
 \end{frame}
 
